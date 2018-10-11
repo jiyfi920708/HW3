@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,7 +8,17 @@ namespace buffteks2
     {
         static void Main(string[] args)
         {
-            using(var db = new AppDbContext())
+            MakeStudents();
+            AdvisorInformation();
+            TeamInformation();
+            ClientInfoamtion();
+            ProjectInformation();
+            OrganizationInformation();
+        }
+
+        static void MakeStudents()
+        {
+           using(var db = new AppDbContext())
             {
                 try
                 {
@@ -39,7 +49,7 @@ namespace buffteks2
                             {
                                 FirstName = "Jane",
                                 LastName = "Doe",
-                                PhoneNumber = "123-555-1234",
+                                PhoneNumber = "123-555-1234", 
                                 Email = "janestudent@buffs.wtamu.edu",
                                 Role = "Freshman"
                             },                        
@@ -67,8 +77,8 @@ namespace buffteks2
                 }
             }
         }
-
-        static void Main1(string[] args)
+    
+        static void AdvisorInformation()
         {
             using(var db1 = new AppDbContext())
             try
@@ -91,8 +101,8 @@ namespace buffteks2
                 Console.WriteLine(exp1.Message);
             }
         }
-
-        static void Main2(string[] args)
+    
+        static void TeamInformation()
         {
             using(var db2 = new AppDbContext())
             try
@@ -116,7 +126,7 @@ namespace buffteks2
             }
         }
 
-        static void Main3(string[] args)
+        static void ClientInfoamtion()
         {
             using(var db3 = new AppDbContext())
             try
@@ -140,9 +150,9 @@ namespace buffteks2
             {
                 Console.WriteLine(exp3.Message);
             }
-        }   
+        }  
 
-        static void Main4(string[] args)
+        static void ProjectInformation()
         {
             using(var db4 = new AppDbContext())
             try
@@ -168,7 +178,7 @@ namespace buffteks2
             }
         } 
 
-        static void Main5(string[] args)
+        static void OrganizationInformation()
         {
             using(var db5 = new AppDbContext())
             try
@@ -190,5 +200,6 @@ namespace buffteks2
                 Console.WriteLine(exp5.Message);
             }
         } 
+    
     }
 }
